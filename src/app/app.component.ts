@@ -9,7 +9,7 @@ import { TripsListCardComponent } from './features/trips-list/trips-list-card/tr
   imports: [
     HeaderComponent,
     TripsDetailContainerComponent,
-    TripsListCardComponent,
+    TripsListContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

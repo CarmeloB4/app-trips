@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-input-text',
+  selector: 'app-input',
   template: `<label class="input input-bordered flex items-center gap-2">
-    <input type="text" class="grow" [placeholder]="placeholder" />
+    <input [type]="type" class="grow" [placeholder]="placeholder" />
+    @if (type === 'text') {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
@@ -17,6 +18,7 @@ import { FormControl } from '@angular/forms';
         clip-rule="evenodd"
       />
     </svg>
+    }
   </label>`,
   styles: [
     `
@@ -26,7 +28,8 @@ import { FormControl } from '@angular/forms';
     `,
   ],
 })
-export class InputTextComponent implements OnInit {
+export class InputComponent implements OnInit {
+  @Input() type: 'text' | 'date' | 'number' = 'text';
   @Input() placeholder = 'Search';
   @Input() control: FormControl = new FormControl<string | null>(null);
   constructor() {}
