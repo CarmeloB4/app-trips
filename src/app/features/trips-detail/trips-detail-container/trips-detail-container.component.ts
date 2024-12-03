@@ -4,10 +4,7 @@ import { Trip } from '../../../shared/models/trips.models';
 import { ApiTripsDetailService } from '../services/api-trips-detail.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Observable, switchMap } from 'rxjs';
-import {
-  FaIconLibrary,
-  FontAwesomeModule,
-} from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import { ScoreComponent } from '../../../shared/components/score/score.component';
 import { TranslatePipe } from '@ngx-translate/core';

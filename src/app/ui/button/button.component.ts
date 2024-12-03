@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
@@ -14,14 +14,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   </button>`,
   imports: [CommonModule, TranslatePipe],
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   @Input() variant: 'primary' | 'secondary' | 'accent' = 'primary';
   @Input() disabled = false;
   @Input() text = 'Button';
   @Output() onClick = new EventEmitter<void>();
-  constructor() {}
-
-  ngOnInit() {}
 
   getVariantClass() {
     return {

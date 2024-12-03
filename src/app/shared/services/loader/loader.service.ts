@@ -11,6 +11,4 @@ export class LoaderService {
   handleLoading(isLoading: boolean): void {
     this.loading.next(isLoading);
   }
-
-  constructor() {}
 }

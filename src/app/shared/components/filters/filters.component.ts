@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { InputComponent } from '../../../ui/input/input.component';
 import { Form, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -9,12 +9,8 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrls: ['./filters.component.css'],
   imports: [ReactiveFormsModule, TranslatePipe, InputComponent],
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent {
   @Input() filtersForm!: FormGroup;
   @Output() search = new EventEmitter<void>();
   @Output() clearFilters = new EventEmitter<void>();
-
-  constructor() {}
-
-  ngOnInit() {}
 }

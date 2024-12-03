@@ -20,18 +20,16 @@ export class ScoreService {
     nrOfRatings: number,
     co2: number
   ): ScoreResult {
-    // Normalizza i valori
-    const ratingScore = rating * 20; // Converti rating da 0-5 a 0-100
-    const ratingsWeight = Math.min(nrOfRatings / 100, 1); // Peso basato sul numero di ratings (max 100)
-    const co2Score = Math.max(0, 100 - co2 / 2); // Punteggio inverso per CO2 (minore è meglio)
+    const ratingScore = rating * 20; // Convert rating size 0-5 to 0-100
+    const ratingsWeight = Math.min(nrOfRatings / 100, 1); // Calculation about nr of Ratings (max 100)
+    const co2Score = Math.max(0, 100 - co2 / 2); // Score for co2 about minor impact
 
-    // Calcola lo score finale
     const finalScore =
-      ratingScore * 0.4 + // 40% peso per il rating
-      ratingsWeight * 30 + // 30% peso per numero di ratings
-      co2Score * 0.3; // 30% peso per CO2
+      ratingScore * 0.4 + // 40%
+      ratingsWeight * 30 + // 30%
+      co2Score * 0.3; // 30%
+    // percentage of the final score
 
-    // Determina il tier
     const tier = this.getTier(finalScore);
 
     return {

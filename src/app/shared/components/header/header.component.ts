@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonComponent } from '../../../ui/button/button.component';
 import { RouterLink } from '@angular/router';
 

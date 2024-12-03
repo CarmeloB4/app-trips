@@ -14,5 +14,4 @@ export class ErrorsService {
       this.error.next('');
     }, 5000);
   }
-  constructor() {}
 }

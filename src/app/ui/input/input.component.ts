@@ -1,11 +1,4 @@
-import {
-  Component,
-  forwardRef,
-  Input,
-  OnInit,
-  Optional,
-  Self,
-} from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
@@ -66,21 +59,11 @@ import {
       multi: true,
     },
   ],
-
-  styles: [
-    `
-      label:focus {
-        outline: none;
-      }
-    `,
-  ],
 })
-export class InputComponent implements OnInit, ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor {
   @Input() type: 'text' | 'date' | 'number' = 'text';
   @Input() placeholder = 'Search';
   control: FormControl = new FormControl();
-
-  ngOnInit() {}
 
   writeValue(value: any): void {
     this.control.setValue(value, { emitEvent: false });

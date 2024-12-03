@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoaderService } from '../../services/loader/loader.service';
 import { AsyncPipe } from '@angular/common';

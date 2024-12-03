@@ -1,6 +1,6 @@
 import { map, Observable } from 'rxjs';
 import { ApiTripsListService } from './../services/api-trips-list.service';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TripsListCardComponent } from '../trips-list-card/trips-list-card.component';
 import { FiltersComponent } from '../../../shared/components/filters/filters.component';
 import { FormBuilder } from '@angular/forms';
@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
     RouterLink,
   ],
 })
-export class TripsListContainerComponent implements OnInit {
+export class TripsListContainerComponent {
   trips!: Observable<Trip[]>;
   private formBuilder = inject(FormBuilder);
   filtersForm = this.formBuilder.group({
@@ -36,7 +36,6 @@ export class TripsListContainerComponent implements OnInit {
 
   ngOnInit() {
     this.getTrips(this.getFilters());
-    console.log(this.apiTripListService.totalPages);
   }
 
   getPage() {
