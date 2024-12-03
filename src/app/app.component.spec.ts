@@ -1,10 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {
-  TranslateFakeLoader,
-  TranslateModule,
-  TranslateStore,
-} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
 describe('AppComponent', () => {

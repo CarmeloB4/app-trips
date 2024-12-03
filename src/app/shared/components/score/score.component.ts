@@ -39,7 +39,7 @@ export class ScoreComponent implements OnInit {
     this.scoreStats = this.scoreService.calculateScore(
       this.rating,
       this.nrOfRatings,
-      this.co2
+      this.co2,
     );
   }
 

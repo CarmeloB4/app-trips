@@ -26,7 +26,7 @@ describe('Service: Score', () => {
     const result: ScoreResult = service.calculateScore(
       rating,
       nrOfRatings,
-      co2
+      co2,
     );
     expect(result.score).toBe(expectedScore);
     expect(result.tier).toBe(expectedTier);
@@ -42,7 +42,7 @@ describe('Service: Score', () => {
     const result: ScoreResult = service.calculateScore(
       rating,
       nrOfRatings,
-      co2
+      co2,
     );
     expect(result.score).toBe(expectedScore);
     expect(result.tier).toBe(expectedTier);
@@ -58,7 +58,7 @@ describe('Service: Score', () => {
     const result: ScoreResult = service.calculateScore(
       rating,
       nrOfRatings,
-      co2
+      co2,
     );
     expect(result.score).toBe(expectedScore);
     expect(result.tier).toBe(expectedTier);

@@ -33,9 +33,9 @@ export class ApiTripsDetailService {
     return this.httpClient
       .get<Trip>(`${this.apiUrl}/random/trip-of-the-day`)
       .pipe(
-        tap((trip) => {
+        tap(trip => {
           this.setTripOfTheDay(trip, today);
-        })
+        }),
       );
   }
 }

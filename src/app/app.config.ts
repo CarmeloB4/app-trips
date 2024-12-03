@@ -16,7 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { customInterceptor } from './core/interceptors/custom.interceptor';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
-  http: HttpClient
+  http: HttpClient,
 ) => new TranslateHttpLoader(http, './i18n/', '.json');
 
 export const appConfig: ApplicationConfig = {

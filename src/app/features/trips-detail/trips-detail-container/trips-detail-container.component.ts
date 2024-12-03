@@ -27,19 +27,19 @@ export class TripsDetailContainerComponent implements OnInit {
   faStar = faStar;
   constructor(
     private route: ActivatedRoute,
-    private apiTripsDetail: ApiTripsDetailService
+    private apiTripsDetail: ApiTripsDetailService,
   ) {}
 
   ngOnInit() {
     this.trip$ = this.route.paramMap.pipe(
-      switchMap((params) => {
+      switchMap(params => {
         const id = params.get('id');
         if (id === 'tripOfTheDay') {
           return this.apiTripsDetail.getTripOfTheDay();
         } else {
           return this.apiTripsDetail.getTripDetail(id!);
         }
-      })
+      }),
     );
   }
 }

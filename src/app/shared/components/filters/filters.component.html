@@ -8,11 +8,11 @@
     formControlName="sortBy"
   >
     <option disabled selected value="">
-      {{ "filters.sortBy" | translate }}
+      {{ 'filters.sortBy' | translate }}
     </option>
-    <option value="price">{{ "filters.price" | translate }}</option>
-    <option value="creationDate">{{ "filters.date" | translate }}</option>
-    <option value="rating">{{ "filters.rating" | translate }}</option>
+    <option value="price">{{ 'filters.price' | translate }}</option>
+    <option value="creationDate">{{ 'filters.date' | translate }}</option>
+    <option value="rating">{{ 'filters.rating' | translate }}</option>
   </select>
   <label class="swap bg-white rounded">
     <input type="checkbox" formControlName="sortOrder" />
@@ -75,6 +75,6 @@
     class="btn btn-square bg-white hover:bg-accent text-secondary"
     (click)="clearFilters.emit()"
   >
-    {{ "filters.clear" | translate }}
+    {{ 'filters.clear' | translate }}
   </button>
 </div>

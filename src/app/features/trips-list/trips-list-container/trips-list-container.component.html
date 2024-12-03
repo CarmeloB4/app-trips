@@ -5,12 +5,12 @@
     (clearFilters)="clearFilters()"
   ></app-filters>
   @for (trip of trips$ | async; track trip.id) {
-  <app-trips-list-card
-    [trip]="trip"
-    [routerLink]="['/detail', trip.id]"
-  ></app-trips-list-card>
+    <app-trips-list-card
+      [trip]="trip"
+      [routerLink]="['/detail', trip.id]"
+    ></app-trips-list-card>
   } @empty {
-  <p>No result</p>
+    <p>No result</p>
   }
   <div class="join">
     <button

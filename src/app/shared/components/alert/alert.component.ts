@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ErrorsService } from '../../services/errors/errors.service';
 import { AsyncPipe } from '@angular/common';
@@ -12,7 +12,7 @@ import { AsyncPipe } from '@angular/common';
         <span class="text-white">{{ error }}</span>
       </div>
     </div>
-    }`,
+  }`,
 })
 export class AlertComponent {
   error$!: Observable<string>;

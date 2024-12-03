@@ -21,9 +21,9 @@ export class ApiTripsListService {
       .set('sortOrder', filter && filter.sortOrder ? 'ASC' : 'DESC')
       .set('titleFilter', filter && filter.name ? filter.name : '');
     return this.httpClient.get<TripResponse>(this.apiUrl, { params }).pipe(
-      tap((response) => {
+      tap(response => {
         this.totalPages = Math.ceil(response.total / response.limit);
-      })
+      }),
     );
   }
 }

@@ -1,6 +1,6 @@
 import { map, Observable } from 'rxjs';
 import { ApiTripsListService } from './../services/api-trips-list.service';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TripsListCardComponent } from '../trips-list-card/trips-list-card.component';
 import { FiltersComponent } from '../../../shared/components/filters/filters.component';
 import { FormBuilder } from '@angular/forms';
@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
     RouterLink,
   ],
 })
-export class TripsListContainerComponent {
+export class TripsListContainerComponent implements OnInit {
   trips$!: Observable<Trip[]>;
   private formBuilder = inject(FormBuilder);
   filtersForm = this.formBuilder.group({
@@ -31,7 +31,7 @@ export class TripsListContainerComponent {
   });
   constructor(
     private apiTripListService: ApiTripsListService,
-    private tripListService: TripsListService
+    private tripListService: TripsListService,
   ) {}
 
   ngOnInit() {
@@ -62,7 +62,7 @@ export class TripsListContainerComponent {
   getTrips(filter?: Partial<TripFilters>) {
     this.trips$ = this.apiTripListService
       .getTrips(filter)
-      .pipe(map((response) => response.items));
+      .pipe(map(response => response.items));
   }
 
   getFilters() {

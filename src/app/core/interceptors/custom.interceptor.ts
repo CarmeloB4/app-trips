@@ -1,14 +1,7 @@
-import {
-  HttpInterceptor,
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpErrorResponse,
-  HttpInterceptorFn,
-} from '@angular/common/http';
-import { Observable, catchError, finalize, throwError } from 'rxjs';
+import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
+import { catchError, finalize, throwError } from 'rxjs';
 import { LoaderService } from '../../shared/services/loader/loader.service';
-import { inject, Injectable } from '@angular/core';
+import { inject } from '@angular/core';
 import { ErrorsService } from '../../shared/services/errors/errors.service';
 
 export const customInterceptor: HttpInterceptorFn = (req, next) => {
@@ -34,6 +27,6 @@ export const customInterceptor: HttpInterceptorFn = (req, next) => {
     }),
     finalize(() => {
       stateService.handleLoading(false);
-    })
+    }),
   );
 };

@@ -8,7 +8,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     [ngClass]="getVariantClass()"
     class="btn"
     [disabled]="disabled"
-    (click)="onClick.emit()"
+    (click)="handleClick.emit()"
   >
     {{ text | translate }}
   </button>`,
@@ -18,7 +18,7 @@ export class ButtonComponent {
   @Input() variant: 'primary' | 'secondary' | 'accent' = 'primary';
   @Input() disabled = false;
   @Input() text = 'Button';
-  @Output() onClick = new EventEmitter<void>();
+  @Output() handleClick = new EventEmitter<void>();
 
   getVariantClass() {
     return {

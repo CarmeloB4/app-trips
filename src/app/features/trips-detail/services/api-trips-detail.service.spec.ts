@@ -15,6 +15,6 @@ xdescribe('Service: ApiTripsDetail', () => {
     [ApiTripsDetailService],
     (service: ApiTripsDetailService) => {
       expect(service).toBeTruthy();
-    }
+    },
   ));
 });

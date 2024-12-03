@@ -18,7 +18,7 @@ export class ScoreService {
   calculateScore(
     rating: number,
     nrOfRatings: number,
-    co2: number
+    co2: number,
   ): ScoreResult {
     const ratingScore = rating * 20; // Convert rating size 0-5 to 0-100
     const ratingsWeight = Math.min(nrOfRatings / 100, 1); // Calculation about nr of Ratings (max 100)

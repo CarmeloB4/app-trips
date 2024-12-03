@@ -8,7 +8,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import(
         './features/trips-list/trips-list-container/trips-list-container.component'
-      ).then((c) => c.TripsListContainerComponent),
+      ).then(c => c.TripsListContainerComponent),
   },
   {
     path: 'detail/:id',
@@ -16,7 +16,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import(
         './features/trips-detail/trips-detail-container/trips-detail-container.component'
-      ).then((c) => c.TripsDetailContainerComponent),
+      ).then(c => c.TripsDetailContainerComponent),
   },
   { path: '**', component: TripsListContainerComponent },
 ];

@@ -12,7 +12,7 @@ import { AsyncPipe } from '@angular/common';
     >
       <span class="loading loading-ring loading-lg"></span>
     </div>
-    }`,
+  }`,
 })
 export class LoaderComponent {
   loading$!: Observable<boolean>;
