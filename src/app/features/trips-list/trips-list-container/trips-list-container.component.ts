@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
   ],
 })
 export class TripsListContainerComponent {
-  trips!: Observable<Trip[]>;
+  trips$!: Observable<Trip[]>;
   private formBuilder = inject(FormBuilder);
   filtersForm = this.formBuilder.group({
     name: [''],
@@ -60,7 +60,7 @@ export class TripsListContainerComponent {
   }
 
   getTrips(filter?: Partial<TripFilters>) {
-    this.trips = this.apiTripListService
+    this.trips$ = this.apiTripListService
       .getTrips(filter)
       .pipe(map((response) => response.items));
   }

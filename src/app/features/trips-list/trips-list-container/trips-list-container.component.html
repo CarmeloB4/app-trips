@@ -4,7 +4,7 @@
     (search)="filterTrips()"
     (clearFilters)="clearFilters()"
   ></app-filters>
-  @for (trip of trips | async; track trip.id) {
+  @for (trip of trips$ | async; track trip.id) {
   <app-trips-list-card
     [trip]="trip"
     [routerLink]="['/detail', trip.id]"

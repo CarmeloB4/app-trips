@@ -53,6 +53,7 @@
     <button
       [disabled]="filtersForm.pristine"
       class="btn btn-square bg-accent hover:bg-accent"
+      type="submit"
       (click)="search.emit()"
     >
       <svg
@@ -70,6 +71,7 @@
     </button>
   </div>
   <button
+    id="clear"
     class="btn btn-square bg-white hover:bg-accent text-secondary"
     (click)="clearFilters.emit()"
   >
