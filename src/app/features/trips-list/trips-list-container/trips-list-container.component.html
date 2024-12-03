@@ -10,6 +10,8 @@
     [trip]="trip"
     [routerLink]="['/detail', trip.id]"
   ></app-trips-list-card>
+  } @empty {
+  <p>No result</p>
   }
   <div class="join">
     <button

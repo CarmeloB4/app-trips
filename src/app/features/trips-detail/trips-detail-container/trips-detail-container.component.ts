@@ -9,10 +9,17 @@ import {
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
+import { ScoreComponent } from '../../../shared/components/score/score.component';
 
 @Component({
   selector: 'app-trips-detail-container',
-  imports: [FontAwesomeModule, CommonModule, AsyncPipe, RouterLink],
+  imports: [
+    FontAwesomeModule,
+    CommonModule,
+    AsyncPipe,
+    RouterLink,
+    ScoreComponent,
+  ],
   templateUrl: './trips-detail-container.component.html',
   styleUrls: ['./trips-detail-container.component.css'],
 })

@@ -2,7 +2,7 @@
   <figure class="p-2">
     <img
       [src]="trip.thumbnailUrl"
-      alt="Album"
+      [alt]="trip.title"
       class="w-full h-full object-cover"
     />
   </figure>
@@ -16,12 +16,11 @@
           }
         </div>
       </div>
-      <div class="stats shadow flex-none">
-        <div class="stat text-secondary">
-          <div class="stat-title">Score</div>
-          <div class="stat-value">89</div>
-        </div>
-      </div>
+      <app-score
+        [rating]="trip.rating"
+        [nrOfRatings]="trip.nrOfRatings"
+        [co2]="trip.co2"
+      ></app-score>
     </div>
     <div class="card-actions mt-auto">
       <div class="flex w-full justify-between items-center">

@@ -44,7 +44,10 @@ export class TripsListContainerComponent implements OnInit {
   }
 
   getMaximumPage() {
-    return this.getPage() === this.apiTripListService.totalPages;
+    return (
+      this.getPage() === this.apiTripListService.totalPages ||
+      this.apiTripListService.totalPages === 0
+    );
   }
 
   setPage(page: number) {
