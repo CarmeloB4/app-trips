@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
     <div class="flex-none">
       <app-button
         [variant]="'accent'"
-        [text]="'Viaggio del giorno'"
+        [text]="'header.tripOfTheDay'"
         routerLink="detail/tripOfTheDay"
       ></app-button>
     </div>

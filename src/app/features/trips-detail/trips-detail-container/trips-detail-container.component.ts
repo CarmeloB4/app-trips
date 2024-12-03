@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import { ScoreComponent } from '../../../shared/components/score/score.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-trips-detail-container',
@@ -17,6 +18,7 @@ import { ScoreComponent } from '../../../shared/components/score/score.component
     FontAwesomeModule,
     CommonModule,
     AsyncPipe,
+    TranslatePipe,
     RouterLink,
     ScoreComponent,
   ],

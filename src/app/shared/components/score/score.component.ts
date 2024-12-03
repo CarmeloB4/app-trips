@@ -4,13 +4,15 @@ import {
   ScoreService,
   ScoreTier,
 } from '../../../core/services/score/score.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-score',
+  imports: [TranslatePipe],
   template: `
     <div class="stats shadow" [class]="getTierClass()">
       <div class="stat">
-        <div class="stat-title">Score</div>
+        <div class="stat-title">{{ 'card.score' | translate }}</div>
         <div class="stat-value">{{ scoreStats.score }}</div>
         <div class="stat-desc capitalize">{{ scoreStats.tier }}</div>
       </div>

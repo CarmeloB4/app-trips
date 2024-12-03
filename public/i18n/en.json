@@ -1,0 +1,16 @@
+{
+  "header": {
+    "tripOfTheDay": "Trip of the day"
+  },
+  "filters": {
+    "sortBy": "Sort by",
+    "price": "Price",
+    "date": "Date",
+    "rating": "Rating",
+    "clear": "Clear"
+  },
+  "card": {
+    "creationDate": "Creation date",
+    "score": "Score"
+  }
+}

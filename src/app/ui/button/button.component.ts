@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-button',
@@ -9,9 +10,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
     [disabled]="disabled"
     (click)="onClick.emit()"
   >
-    {{ text }}
+    {{ text | translate }}
   </button>`,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
 })
 export class ButtonComponent implements OnInit {
   @Input() variant: 'primary' | 'secondary' | 'accent' = 'primary';
