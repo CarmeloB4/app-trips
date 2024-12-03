@@ -1,76 +1,77 @@
-<div class="h-16 bg-secondary rounded flex items-center gap-2 p-2">
-  <app-input [type]="'text'"></app-input>
-  <app-input [type]="'date'"></app-input>
-  <app-input [type]="'number'" [placeholder]="'Price'"></app-input>
-  <div class="rating rating-md rating-half p-3 bg-white rounded">
-    <input type="radio" name="rating-10" class="rating-hidden" />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-1 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-2 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-1 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-2 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-1 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-2 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-1 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-2 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-1 bg-accent"
-    />
-    <input
-      type="radio"
-      name="rating-10"
-      class="mask mask-star-2 mask-half-2 bg-accent"
-    />
-  </div>
-  <div class="tooltip" data-tip="clear filter">
-    <button class="btn btn-square bg-white">
+<div
+  [formGroup]="filtersForm"
+  class="h-16 bg-secondary rounded flex items-center gap-2 p-2"
+>
+  <app-input [type]="'text'" formControlName="name"></app-input>
+  <select
+    class="select select-bordered w-full max-w-xs"
+    formControlName="sortBy"
+  >
+    <option disabled selected value="">Sort by</option>
+    <option value="price">Price</option>
+    <option value="creationDate">Date</option>
+    <option value="rating">Rating</option>
+    <option value="verticalType">Type</option>
+  </select>
+  <label class="swap bg-white rounded">
+    <input type="checkbox" formControlName="sortOrder" />
+    <svg
+      class="swap-on"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 3.8C9 3.51997 9 3.37996 9.0545 3.273C9.10243 3.17892 9.17892 3.10243 9.273 3.0545C9.37996 3 9.51997 3 9.8 3H14.2C14.48 3 14.62 3 14.727 3.0545C14.8211 3.10243 14.8976 3.17892 14.9455 3.273C15 3.37996 15 3.51997 15 3.8V14H19L12 21L5 14H9V3.8Z"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <svg
+      class="swap-off"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.8 21C9.51997 21 9.37996 21 9.273 20.9455C9.17892 20.8976 9.10243 20.8211 9.0545 20.727C9 20.62 9 20.48 9 20.2V10H5L12 3L19 10H15V20.2C15 20.48 15 20.62 14.9455 20.727C14.8976 20.8211 14.8211 20.8976 14.727 20.9455C14.62 21 14.48 21 14.2 21H9.8Z"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </label>
+  <div class="tooltip" data-tip="Search">
+    <button
+      [disabled]="filtersForm.pristine"
+      class="btn btn-square bg-accent hover:bg-accent"
+      (click)="search.emit()"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70"
       >
         <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
+          fill-rule="evenodd"
+          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+          clip-rule="evenodd"
         />
       </svg>
     </button>
   </div>
+  <button
+    class="btn btn-square bg-white hover:bg-accent text-secondary"
+    (click)="clearFilters.emit()"
+  >
+    Clear
+  </button>
 </div>

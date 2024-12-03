@@ -1,10 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnInit,
+  Optional,
+  Self,
+} from '@angular/core';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+  NgControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
   template: `<label class="input input-bordered flex items-center gap-2">
-    <input [type]="type" class="grow" [placeholder]="placeholder" />
+    <input
+      [type]="type"
+      class="grow"
+      [placeholder]="placeholder"
+      [formControl]="control"
+    />
     @if (type === 'text') {
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +36,37 @@ import { FormControl } from '@angular/forms';
         clip-rule="evenodd"
       />
     </svg>
+    } @else if (type === 'number') {
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 120"
+      class="h-4 w-4 opacity-70"
+    >
+      <path
+        d="M80 35
+           C80 22, 65 10, 45 10
+           C25 10, 10 25, 10 50
+           C10 75, 25 90, 45 90
+           C65 90, 80 78, 80 65"
+        fill="none"
+        stroke="black"
+        stroke-width="8"
+        stroke-linecap="round"
+      />
+      <line x1="5" y1="45" x2="70" y2="45" stroke="black" stroke-width="8" />
+      <line x1="5" y1="55" x2="70" y2="55" stroke="black" stroke-width="8" />
+    </svg>
     }
   </label>`,
+  imports: [ReactiveFormsModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true,
+    },
+  ],
+
   styles: [
     `
       label:focus {
@@ -28,11 +75,26 @@ import { FormControl } from '@angular/forms';
     `,
   ],
 })
-export class InputComponent implements OnInit {
+export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() type: 'text' | 'date' | 'number' = 'text';
   @Input() placeholder = 'Search';
-  @Input() control: FormControl = new FormControl<string | null>(null);
-  constructor() {}
+  control: FormControl = new FormControl();
 
   ngOnInit() {}
+
+  writeValue(value: any): void {
+    this.control.setValue(value, { emitEvent: false });
+  }
+
+  registerOnChange(fn: any): void {
+    this.control.valueChanges.subscribe(fn);
+  }
+
+  registerOnTouched(fn: any): void {
+    this.control.registerOnChange(fn);
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    isDisabled ? this.control.disable() : this.control.enable();
+  }
 }

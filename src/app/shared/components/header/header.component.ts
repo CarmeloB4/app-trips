@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../../../ui/button/button.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   template: `<div class="navbar bg-primary">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl text-white">App Trips</a>
+      <a class="btn btn-ghost text-xl text-white" routerLink="/">App Trips</a>
     </div>
     <div class="flex-none">
       <app-button
         [variant]="'accent'"
         [text]="'Viaggio del giorno'"
-        (onClick)="navigateToDailyTrip()"
+        routerLink="detail/tripOfTheDay"
       ></app-button>
     </div>
   </div>`,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, RouterLink],
 })
-export class HeaderComponent {
-  navigateToDailyTrip() {
-    console.log('Navigate to daily trip');
-  }
-}
+export class HeaderComponent {}

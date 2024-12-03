@@ -3,20 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { InputTextComponent } from './input.component';
+import { InputComponent } from './input.component';
 
 describe('InputTextComponent', () => {
-  let component: InputTextComponent;
-  let fixture: ComponentFixture<InputTextComponent>;
+  let component: InputComponent;
+  let fixture: ComponentFixture<InputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [InputTextComponent],
+      declarations: [InputComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputTextComponent);
+    fixture = TestBed.createComponent(InputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

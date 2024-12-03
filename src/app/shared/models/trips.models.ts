@@ -1,3 +1,10 @@
+export interface TripResponse {
+  items: Trip[];
+  total: number;
+  page: number;
+  limit: number;
+}
+
 export interface Trip {
   id: string;
   title: string;
@@ -6,9 +13,30 @@ export interface Trip {
   thumbnailUrl: string;
   price: number;
   tags: string[];
-  cO2: number;
+  co2: number;
   rating: number;
-  nrOfRating: number;
+  nrOfRatings: number;
   imageUrl: string;
-  type: string;
+  verticalType: string;
+}
+
+export type SortBy =
+  | 'title'
+  | 'price'
+  | 'rating'
+  | 'creationDate'
+  | 'verticalType';
+
+export interface TripFilters {
+  name?: string | null;
+  minPrice?: number;
+  maxPrice?: number;
+  minRating?: number;
+  sortBy?: SortBy | null;
+  sortOrder?: boolean;
+}
+
+export interface TripsPagination {
+  page: number;
+  limit: number;
 }
