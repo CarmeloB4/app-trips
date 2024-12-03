@@ -5,7 +5,7 @@ import { TripFilters } from '../../../shared/models/trips.models';
   providedIn: 'root',
 })
 export class TripsListService {
-  setFilters(filters: TripFilters): void {
+  setFilters(filters: Partial<TripFilters>): void {
     sessionStorage.setItem('filters', JSON.stringify(filters));
   }
 

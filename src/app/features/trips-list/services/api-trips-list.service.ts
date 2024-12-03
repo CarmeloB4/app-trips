@@ -14,7 +14,7 @@ export class ApiTripsListService {
   totalPages!: number;
   constructor(private httpClient: HttpClient) {}
 
-  getTrips(filter?: TripFilters): Observable<TripResponse> {
+  getTrips(filter?: Partial<TripFilters>): Observable<TripResponse> {
     const params = new HttpParams()
       .set('page', this.page)
       .set('sortBy', filter && filter.sortBy ? filter.sortBy : '')

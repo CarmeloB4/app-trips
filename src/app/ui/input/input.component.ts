@@ -65,15 +65,15 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder = 'Search';
   control: FormControl = new FormControl();
 
-  writeValue(value: any): void {
+  writeValue(value: string | null): void {
     this.control.setValue(value, { emitEvent: false });
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string | null) => void): void {
     this.control.valueChanges.subscribe(fn);
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.control.registerOnChange(fn);
   }
 

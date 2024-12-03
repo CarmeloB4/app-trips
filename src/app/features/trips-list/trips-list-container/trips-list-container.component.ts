@@ -59,7 +59,7 @@ export class TripsListContainerComponent {
     return this.getPage() === 1;
   }
 
-  getTrips(filter?: TripFilters) {
+  getTrips(filter?: Partial<TripFilters>) {
     this.trips = this.apiTripListService
       .getTrips(filter)
       .pipe(map((response) => response.items));
@@ -72,10 +72,9 @@ export class TripsListContainerComponent {
   }
 
   filterTrips() {
-    this.tripListService.setFilters(
-      this.filtersForm.value as unknown as TripFilters
-    );
-    this.getTrips(this.filtersForm.value as unknown as TripFilters);
+    const filters: Partial<TripFilters> = this.filtersForm.value;
+    this.tripListService.setFilters(filters);
+    this.getTrips(filters);
   }
 
   clearFilters() {

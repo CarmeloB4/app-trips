@@ -4,7 +4,6 @@
     (search)="filterTrips()"
     (clearFilters)="clearFilters()"
   ></app-filters>
-  {{ filtersForm.value | json }}
   @for (trip of trips | async; track trip.id) {
   <app-trips-list-card
     [trip]="trip"

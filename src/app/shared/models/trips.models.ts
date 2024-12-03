@@ -28,12 +28,12 @@ export type SortBy =
   | 'verticalType';
 
 export interface TripFilters {
-  name?: string | null;
+  name: string | null;
   minPrice?: number;
   maxPrice?: number;
   minRating?: number;
-  sortBy?: SortBy | null;
-  sortOrder?: boolean;
+  sortBy: string | null;
+  sortOrder: boolean | null;
 }
 
 export interface TripsPagination {
