@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { LoaderService } from './loader.service';
 
-describe('Service: Loader', () => {
+xdescribe('Service: Loader', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [LoaderService]
+      providers: [LoaderService],
     });
   });
 

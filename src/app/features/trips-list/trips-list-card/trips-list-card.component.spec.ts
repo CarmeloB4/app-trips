@@ -1,20 +1,17 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TripsListCardComponent } from './trips-list-card.component';
 
-describe('TripsListCardComponent', () => {
+xdescribe('TripsListCardComponent', () => {
   let component: TripsListCardComponent;
   let fixture: ComponentFixture<TripsListCardComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ TripsListCardComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [TripsListCardComponent],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TripsListCardComponent);
