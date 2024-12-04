@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../../environments/environment.development';
+import { environment } from '@env/environment';
 import { Observable, tap } from 'rxjs';
 import { TripFilters, TripResponse } from '../../../shared/models/trips.models';
 import { HttpClient, HttpParams } from '@angular/common/http';
