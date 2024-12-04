@@ -1,0 +1,32 @@
+<div class="trips-list-container flex flex-col items-center gap-4 p-2">
+  <app-filters
+    [filtersForm]="filtersForm"
+    (search)="filterTrips()"
+    (clearFilters)="clearFilters()"
+  ></app-filters>
+  @for (trip of trips$ | async; track trip.id) {
+    <app-trips-list-card
+      [trip]="trip"
+      [routerLink]="['/detail', trip.id]"
+    ></app-trips-list-card>
+  } @empty {
+    <p>No result</p>
+  }
+  <div class="join">
+    <button
+      class="join-item btn disabled:bg-slate-100"
+      [disabled]="disabledPagination()"
+      (click)="setPage(getPage() - 1)"
+    >
+      «
+    </button>
+    <button class="join-item btn">Page {{ getPage() }}</button>
+    <button
+      class="join-item btn disabled:bg-slate-100"
+      [disabled]="getMaximumPage()"
+      (click)="setPage(getPage() + 1)"
+    >
+      »
+    </button>
+  </div>
+</div>
