@@ -1,7 +1,15 @@
-# AppTrips
+# AppTrips 🛩️
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
 
+
+I make a little mockup for design (and have an idea) the application: https://www.figma.com/design/BcLlJIW7XWTv0Rok3SPXr5/Interview?node-id=0-1&node-type=canvas&t=uehaTGQ26rGjfNQx-0
+
+
+In the project I have integrated the unit test (with Jest) and e2e test (with cypress)
+
+
+The app builded is served on Github pages with CI Actions
 ## Development server
 
 To start a local development server, run:
@@ -11,20 +19,6 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 
@@ -38,10 +32,8 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
 ```bash
-ng test
+npm run test
 ```
 
 ## Running end-to-end tests
@@ -49,7 +41,7 @@ ng test
 For end-to-end (e2e) testing, run:
 
 ```bash
-ng e2e
+npm cypress:open
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
