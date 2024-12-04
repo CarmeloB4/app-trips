@@ -24,10 +24,10 @@ jobs:
       - name: Create environment file
         run: |
           mkdir -p src/environments
-          echo "export const environment = {" > src/environments/environment.prod.ts
-          echo "  production: true," >> src/environments/environment.prod.ts
-          echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.prod.ts
-          echo "};" >> src/environments/environment.prod.ts
+          echo "export const environment = {" > src/environments/environment.ts
+          echo "  production: false," >> src/environments/environment.ts
+          echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.ts
+          echo "};" >> src/environments/environment.ts
 
       - name: Build
         run: npm run build -- --configuration production --base-href "/${{ github.event.repository.name }}/"
